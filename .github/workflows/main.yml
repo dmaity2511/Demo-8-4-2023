@@ -26,4 +26,4 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           pip3 install --user -r requirements.txt  # If your script has any dependencies, list them in requirements.txt
-          python3 your_script.py
+          python3 pyt.py
