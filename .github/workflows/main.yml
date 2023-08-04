@@ -19,11 +19,9 @@ jobs:
         with:
           python-version: 3.x  # Replace with the desired Python version
 
-      - name: Install Git-SVN
-        run: sudo apt-get update && sudo apt-get install git-svn -y
 
       - name: Run Python script
         run: |
           python3 -m pip install --upgrade pip
-          pip3 install --user -r requirements.txt  # If your script has any dependencies, list them in requirements.txt
+          #pip3 install --user -r requirements.txt  # If your script has any dependencies, list them in requirements.txt
           python3 pyt.py
