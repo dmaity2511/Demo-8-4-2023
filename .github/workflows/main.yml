@@ -1,0 +1,29 @@
+name: SVN-to-Git-Hub-Migration
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # You can choose other OS if needed
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x  # Replace with the desired Python version
+
+      - name: Install Git-SVN
+        run: sudo apt-get update && sudo apt-get install git-svn -y
+
+      - name: Run Python script
+        run: |
+          python3 -m pip install --upgrade pip
+          pip3 install --user -r requirements.txt  # If your script has any dependencies, list them in requirements.txt
+          python3 your_script.py
