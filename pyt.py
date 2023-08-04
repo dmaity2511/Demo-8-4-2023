@@ -1,8 +1,6 @@
 import subprocess
 import os
 
-
-
 # SVN and Git repository URLs
 svn_repo_url = "http://20.25.185.244/svn/myrepo/"
 
